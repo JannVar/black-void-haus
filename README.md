@@ -10,7 +10,11 @@ Proyecto personal de práctica: una tienda online ficticia de ropa "gothic stree
 
 ## Capturas
 
-*(añade aquí 1-2 capturas de pantalla de la home y de una página de producto)*
+<img width="1897" height="967" alt="Captura de pantalla 2026-09-19 131458" src="https://github.com/user-attachments/assets/c4694671-66e4-40bb-bfcb-362f36a7145a" />
+<img width="1821" height="957" alt="Captura de pantalla 2026-09-19 131530" src="https://github.com/user-attachments/assets/700db203-5e6c-4cbe-82b4-e94b08033a90" />
+<img width="1866" height="973" alt="Captura de pantalla 2026-09-19 131604" src="https://github.com/user-attachments/assets/0bc6d5f1-0532-4a0a-9b65-3b30376980b9" />
+<img width="1810" height="965" alt="Captura de pantalla 2026-09-19 131640" src="https://github.com/user-attachments/assets/3d35d757-f324-46a1-880b-bb71310a33d0" />
+
 
 ## ¿Qué hace?
 
