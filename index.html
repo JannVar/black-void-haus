@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BLACK VOID HAUS — ARCHIVE 2026</title>
+    <meta name="description" content="Black Void Haus — proyecto personal de tienda online (gothic streetwear) construido con HTML, CSS y JavaScript vanilla. Proyecto de práctica, no es una tienda real." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%230d0d0d'/%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='%233a2a1a' stroke-width='1.5'/%3E%3Ctext x='50' y='68' font-family='UnifrakturMaguntia,serif' font-size='36' fill='%23d4b896' text-anchor='middle'%3EBVH%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<!-- NAVIGATION -->
+    <nav>
+        <div class="logo-container">
+            <svg class="logo-spike" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50,10 L55,40 L85,45 L58,55 L70,85 L50,62 L30,85 L42,55 L15,45 L45,40 Z" />
+            </svg>
+            <a class="nav-logo" onclick="showPage('home')">Black Void Haus</a>
+        </div>
+        <ul class="nav-links">
+            <li><a class="tech-text" onclick="showPage('home')" data-page="home">Home</a></li>
+            <li><a class="tech-text" onclick="showPage('men')" data-page="men">Men</a></li>
+            <li><a class="tech-text" onclick="showPage('women')" data-page="women">Women</a></li>
+            <li><a class="tech-text" onclick="showPage('archive')" data-page="archive">Archive</a></li>
+            <li><a class="tech-text" onclick="showPage('about')" data-page="about">About</a></li>
+            <li><a class="tech-text" onclick="showPage('support')" data-page="support">Support</a></li>
+        </ul>
+        <button class="cart-trigger tech-text" id="cartToggle">Cart (0)</button>
+    </nav>
+
+    <!-- ============================================================
+         PAGE 1 — HOME
+    ============================================================ -->
+    <div class="page active" id="page-home">
+        <header class="hero">
+            <h1 class="hero-title">Black Void Haus</h1>
+            <p class="tech-text hero-subtitle">DESIGNED_IN_THE_ABYSS // ARCHIVE_V2</p>
+            <div class="hero-nav-cards">
+                <button class="hero-card" onclick="showPage('men')">Menswear →</button>
+                <button class="hero-card" onclick="showPage('women')">Womenswear →</button>
+                <button class="hero-card" onclick="showPage('archive')">Full Archive →</button>
+            </div>
+        </header>
+
+        <!-- Featured strip -->
+        <div class="featured-strip">
+            <div class="featured-panel" onclick="showPage('men')">
+                <img src="Hombres/02 Hoodies/DSC09439_1100x.jpg" alt="Menswear">
+                <div class="featured-label">
+                    <span class="tech-text"
+                        style="color:var(--silver); display:block; margin-bottom:0.3rem;">Category_01</span>
+                    <h3>Menswear</h3>
+                </div>
+            </div>
+            <div class="featured-panel" onclick="showPage('women')">
+                <img src="Mujeres/DSC05568_1100x.webp" alt="Womenswear">
+                <div class="featured-label">
+                    <span class="tech-text"
+                        style="color:var(--silver); display:block; margin-bottom:0.3rem;">Category_02</span>
+                    <h3>Womenswear</h3>
+                </div>
+            </div>
+            <div class="featured-panel" onclick="showPage('archive')">
+                <img src="Hombres/01 Camisetas/DSC01744_1100x.jpg" alt="Archive">
+                <div class="featured-label">
+                    <span class="tech-text"
+                        style="color:var(--silver); display:block; margin-bottom:0.3rem;">Archive_2026</span>
+                    <h3>Full Drop</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="lang-container">
+            <select class="lang-selector">
+                <option>EN</option>
+                <option>ES</option>
+                <option>FR</option>
+            </select>
+        </div>
+
+        <footer>
+            <div class="tech-text" style="font-size:0.75rem; margin-bottom:1rem; opacity:0.8;">Black Void Haus</div>
+            <p class="tech-text">© 2026 — Designed for high-mobility gothic streetwear</p>
+        </footer>
+    </div>
+
+    <!-- ============================================================
+         PAGE 2 — MENSWEAR
+    ============================================================ -->
+    <div class="page" id="page-men">
+        <!-- Rubric -->
+        <div class="page-rubric">
+            <h2>Menswear</h2>
+            <span class="page-rubric-sub tech-text">Archive_V2 // Collection 2026</span>
+        </div>
+        <div class="rubric-breadcrumb">
+            <span onclick="showPage('home')" style="cursor:crosshair;">BVH</span>
+            <span>›</span>
+            <span class="active-crumb">Menswear</span>
+        </div>
+
+        <!-- Filter -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter-men="all">All</button>
+            <button class="filter-btn" data-filter-men="hoodies">Hoodies</button>
+            <button class="filter-btn" data-filter-men="shirts">Shirts</button>
+            <button class="filter-btn" data-filter-men="cargos">Cargos</button>
+            <button class="filter-btn" data-filter-men="pants">Pants</button>
+        </div>
+
+        <div class="section-man">
+            <div class="section-inner">
+
+                <!-- HOODIES -->
+                <div class="category-divider" data-men-cat="hoodies">
+                    <h3 class="category-name">Hoodies</h3>
+                    <span class="tech-text">Category_01 // Man</span>
+                </div>
+                <div class="product-grid" data-men-cat="hoodies">
+                    <div class="product-card">
+                        <div class="badge">SOLD OUT</div>
+                        <div class="product-img"><img src="Hombres/02 Hoodies/hoodie-graphic-01.png"
+                                alt="Sudadera Rasgada"></div>
+                        <div class="product-info">
+                            <span class="product-title">Rasg Hoodie</span>
+                            <span class="product-price">$148.00</span>
+                            <button class="add-to-cart-btn" data-name="Rasg Hoodie" data-price="148.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img src="Hombres/02 Hoodies/DSC00139-3_720x.webp"
+                                alt="Leviathan Zip-up"></div>
+                        <div class="product-info">
+                            <span class="product-title">Tarnished Leviathan Zip-up</span>
+                            <span class="product-price">$148.00</span>
+                            <button class="add-to-cart-btn" data-name="Leviathan Zip-up" data-price="148.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img src="Hombres/02 Hoodies/DSC04175_1100x.webp" alt="Black Angel">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-title">Black-Angel</span>
+                            <span class="product-price">$148.00</span>
+                            <button class="add-to-cart-btn" data-name="Black-Angel Hoodie" data-price="148.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img src="Hombres/02 Hoodies/DSC09439_1100x.jpg" alt="Tarnished Angel">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-title">Tarnished Angel Zip-up</span>
+                            <span class="product-price">$148.00</span>
+                            <button class="add-to-cart-btn" data-name="Tarnished Angel Zip-up" data-price="148.00">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img
+                                src="Hombres/02 Hoodies/DSC09793_7f1a3389-66c3-411e-8939-892d45cc187a_1100x.webp"
+                                alt="Basic Lev-Rasg"></div>
+                        <div class="product-info">
+                            <span class="product-title">Basic Lev-Rasg</span>
+                            <span class="product-price">$148.00</span>
+                            <button class="add-to-cart-btn" data-name="Basic Lev-Rasg" data-price="148.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img
+                                src="Hombres/02 Hoodies/embroidery-zipup-grey-01.webp" alt="Sword">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-title">Sword Embroidery Zip-up</span>
+                            <span class="product-price">$148.00</span>
+                            <button class="add-to-cart-btn" data-name="Sword Zip-up" data-price="148.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SHIRTS -->
+                <div class="category-divider" data-men-cat="shirts">
+                    <h3 class="category-name">Shirts</h3>
+                    <span class="tech-text">Category_02 // Man</span>
+                </div>
+                <div class="product-grid" data-men-cat="shirts">
+                    <div class="product-card">
+                        <div class="badge">HOT DROP</div>
+                        <div class="product-img"><img
+                                src="Hombres/01 Camisetas/oversized-tshirt-red-01.webp"
+                                alt="Forgotten Soul Red"></div>
+                        <div class="product-info">
+                            <span class="product-title">Forgotten Soul [Heavenly Red]</span>
+                            <span class="product-price">$57.00</span>
+                            <button class="add-to-cart-btn" data-name="Forgotten Soul (Red)" data-price="57.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img
+                                src="Hombres/01 Camisetas/oversized-tshirt-midnight-01.webp"
+                                alt="Forgotten Soul Black"></div>
+                        <div class="product-info">
+                            <span class="product-title">Forgotten Soul [Midnight Black]</span>
+                            <span class="product-price">$57.00</span>
+                            <button class="add-to-cart-btn" data-name="Forgotten Soul (Midnight)" data-price="57.00">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="badge">UNISEX</div>
+                        <div class="product-img"><img src="Hombres/01 Camisetas/DSC00172_1100x.jpg"
+                                alt="Archangel Wings"></div>
+                        <div class="product-info">
+                            <span class="product-title">Archangel Wings Tee [Bone White]</span>
+                            <span class="product-price">$57.00</span>
+                            <button class="add-to-cart-btn" data-name="Archangel Wings Tee (White)"
+                                data-price="57.00">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img src="Hombres/01 Camisetas/DSC01703_1100x.webp"
+                                alt="Shadow Red Tee"></div>
+                        <div class="product-info">
+                            <span class="product-title">Forgotten Soul Tee [Shadow Red]</span>
+                            <span class="product-price">$57.00</span>
+                            <button class="add-to-cart-btn" data-name="Forgotten Soul Tee (Red)" data-price="57.00">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img src="Hombres/01 Camisetas/DSC01744_1100x.jpg"
+                                alt="Shadow White Tee"></div>
+                        <div class="product-info">
+                            <span class="product-title">Forgotten Soul Tee [Shadow White]</span>
+                            <span class="product-price">$57.00</span>
+                            <button class="add-to-cart-btn" data-name="Forgotten Soul Tee (White)"
+                                data-price="57.00">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img
+                                src="Hombres/01 Camisetas/DSC02264_15176044-50ad-408e-8dc5-5c485b6c59a5_1100x.webp"
+                                alt="Shadow Pink Tee"></div>
+                        <div class="product-info">
+                            <span class="product-title">Forgotten Soul Tee [Shadow Pink]</span>
+                            <span class="product-price">$57.00</span>
+                            <button class="add-to-cart-btn" data-name="Forgotten Soul Tee (Pink)" data-price="57.00">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARGOS -->
+                <div class="category-divider" data-men-cat="cargos">
+                    <h3 class="category-name">Cargos</h3>
+                    <span class="tech-text">Category_03 // Man</span>
+                </div>
+                <div class="product-grid" data-men-cat="cargos">
+                    <div class="product-card">
+                        <div class="product-img"><img
+                                src="Hombres/03 Pants/DSC01041_70db1fc8-da21-4a5c-8e09-9e8df311871c_1100x.jpg"
+                                alt="Gargoyle Cargos Grey"></div>
+                        <div class="product-info">
+                            <span class="product-title">Gargoyle Banana Cargos Grey</span>
+                            <span class="product-price">$128.00</span>
+                            <button class="add-to-cart-btn" data-name="Gargoyle Cargos Grey" data-price="128.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img src="Hombres/03 Pants/DSC01296_1100x.jpg"
+                                alt="Gargoyle Cargos White"></div>
+                        <div class="product-info">
+                            <span class="product-title">Gargoyle Banana Cargos White</span>
+                            <span class="product-price">$128.00</span>
+                            <button class="add-to-cart-btn" data-name="Gargoyle Cargos White" data-price="128.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img
+                                src="Hombres/03 Pants/DSC01468_a2290f99-7ac6-4086-907c-c18e42d7668d_1100x.jpg"
+                                alt="Banana Cargos"></div>
+                        <div class="product-info">
+                            <span class="product-title">Banana Cargos</span>
+                            <span class="product-price">$128.00</span>
+                            <button class="add-to-cart-btn" data-name="Banana Cargos" data-price="128.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANTS -->
+                <div class="category-divider" data-men-cat="pants">
+                    <h3 class="category-name">Pants</h3>
+                    <span class="tech-text">Category_04 // Man</span>
+                </div>
+                <div class="product-grid" data-men-cat="pants">
+                    <div class="product-card">
+                        <div class="product-img"><img src="Hombres/03 Pants/DSC01461_1100x.webp" alt="Abyss Wide Leg">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-title">Abyss Wide Leg Pants</span>
+                            <span class="product-price">$120.00</span>
+                            <button class="add-to-cart-btn" data-name="Abyss Wide Leg" data-price="120.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img src="Hombres/03 Pants/DSC02128-2_1100x.webp"
+                                alt="Abyss Wide Leg Red"></div>
+                        <div class="product-info">
+                            <span class="product-title">Abyss Wide Leg Pants Red</span>
+                            <span class="product-price">$120.00</span>
+                            <button class="add-to-cart-btn" data-name="Abyss Wide Leg Red" data-price="120.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img src="Hombres/03 Pants/DSC09532-2_1100x.jpg" alt="Leg Pants"></div>
+                        <div class="product-info">
+                            <span class="product-title">Leg Pants</span>
+                            <span class="product-price">$120.00</span>
+                            <button class="add-to-cart-btn" data-name="Leg Pants" data-price="120.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img src="Hombres/03 Pants/DSC09918_1100x.webp"
+                                alt="Abyss Wide Leg Violet"></div>
+                        <div class="product-info">
+                            <span class="product-title">Abyss Wide Leg Pants Violet</span>
+                            <span class="product-price">$120.00</span>
+                            <button class="add-to-cart-btn" data-name="Abyss Wide Leg Violet" data-price="120.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+            <p class="tech-text">© 2026 Black Void Haus — Menswear Archive</p>
+        </footer>
+    </div>
+
+    <!-- ============================================================
+         PAGE 3 — WOMENSWEAR
+    ============================================================ -->
+    <div class="page" id="page-women">
+        <div class="page-rubric">
+            <h2>Womenswear</h2>
+            <span class="page-rubric-sub tech-text">Archive_V2 // Collection 2026</span>
+        </div>
+        <div class="rubric-breadcrumb">
+            <span onclick="showPage('home')" style="cursor:crosshair;">BVH</span>
+            <span>›</span>
+            <span class="active-crumb">Womenswear</span>
+        </div>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter-women="all">All</button>
+            <button class="filter-btn" data-filter-women="shirts">Shirts</button>
+            <button class="filter-btn" data-filter-women="sports-bras">Sports Bras</button>
+            <button class="filter-btn" data-filter-women="bodysuits">Bodysuits</button>
+            <button class="filter-btn" data-filter-women="shorts">Shorts</button>
+            <button class="filter-btn" data-filter-women="leggings">Leggings</button>
+            <button class="filter-btn" data-filter-women="pants">Pants</button>
+        </div>
+
+        <div class="section-woman">
+            <div class="section-inner">
+
+                <!-- SHIRTS -->
+                <div class="category-divider" data-women-cat="shirts">
+                    <h3 class="category-name">Shirts</h3>
+                    <span class="tech-text">Category_01 // Woman</span>
+                </div>
+                <div class="product-grid" data-women-cat="shirts">
+                    <div class="product-card">
+                        <div class="badge">TACTICAL</div>
+                        <div class="product-img"><img src="Mujeres/DSC05524_1100x.webp" alt="Technical Zip Tee"></div>
+                        <div class="product-info">
+                            <span class="product-title">Archangel Technical Zip Tee</span>
+                            <span class="product-price">$70.00</span>
+                            <button class="add-to-cart-btn" data-name="Archangel Zip Tee" data-price="70.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="badge">HOT DROP</div>
+                        <div class="product-img"><img src="Mujeres/DSC05664-2_1100x.webp" alt="Tribal Tank Blue"></div>
+                        <div class="product-info">
+                            <span class="product-title">Tribal Tank Top [Spectral Blue]</span>
+                            <span class="product-price">$57.00</span>
+                            <button class="add-to-cart-btn" data-name="Tribal Tank (Blue)" data-price="57.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img src="Mujeres/DSC07649-2_1100x.webp" alt="Tribal Tank Ash"></div>
+                        <div class="product-info">
+                            <span class="product-title">Tribal Tank Top [Ash Grey]</span>
+                            <span class="product-price">$57.00</span>
+                            <button class="add-to-cart-btn" data-name="Tribal Tank (Ash)" data-price="57.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="badge">RHINESTONE</div>
+                        <div class="product-img"><img
+                                src="Mujeres/DSC08813_eebc19ef-69ee-4387-8c22-61a82f82f3b0_1100x.jpg"
+                                alt="Rhinestone Tube Top"></div>
+                        <div class="product-info">
+                            <span class="product-title">Void Rhinestone Tube Top</span>
+                            <span class="product-price">$44.00</span>
+                            <button class="add-to-cart-btn" data-name="Void Rhinestone Tube Top" data-price="44.00">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="badge">UNISEX</div>
+                        <div class="product-img"><img
+                                src="Mujeres/DSC09046_3c02c941-2067-4b21-b0f3-c06690224026_1100x.webp"
+                                alt="Archangel Wings White"></div>
+                        <div class="product-info">
+                            <span class="product-title">Archangel Wings Tee [Bone White]</span>
+                            <span class="product-price">$57.00</span>
+                            <button class="add-to-cart-btn" data-name="Archangel Wings Tee (White)"
+                                data-price="57.00">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img
+                                src="Mujeres/DSC09785_63821120-004a-4692-bf2e-2b33e57052ac_1100x.webp"
+                                alt="Forgotten Soul Shadow Black"></div>
+                        <div class="product-info">
+                            <span class="product-title">Forgotten Soul Tee [Shadow Black]</span>
+                            <span class="product-price">$57.00</span>
+                            <button class="add-to-cart-btn" data-name="Forgotten Soul (Shadow)" data-price="57.00">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SPORTS BRAS -->
+                <div class="category-divider" data-women-cat="sports-bras">
+                    <h3 class="category-name">Sports Bras</h3>
+                    <span class="tech-text">Category_02 // Woman</span>
+                </div>
+                <div class="product-grid" data-women-cat="sports-bras">
+                    <div class="product-card">
+                        <div class="product-img"><img src="Mujeres/DSC08271_1100x.webp" alt="Gothic Sports Bra Front">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-title">Gothic Core Sports Bra [Front]</span>
+                            <span class="product-price">$48.00</span>
+                            <button class="add-to-cart-btn" data-name="Gothic Sports Bra (Front)" data-price="48.00">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img
+                                src="Mujeres/DSC08312_d10a0ca1-deb8-448c-a2cb-1029218b5b20_1100x.webp"
+                                alt="Gothic Sports Bra Back"></div>
+                        <div class="product-info">
+                            <span class="product-title">Gothic Core Sports Bra [Back Straps]</span>
+                            <span class="product-price">$48.00</span>
+                            <button class="add-to-cart-btn" data-name="Gothic Sports Bra (Back)" data-price="48.00">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BODYSUITS -->
+                <div class="category-divider" data-women-cat="bodysuits">
+                    <h3 class="category-name">Bodysuits</h3>
+                    <span class="tech-text">Category_03 // Woman</span>
+                </div>
+                <div class="product-grid" data-women-cat="bodysuits">
+                    <div class="product-card">
+                        <div class="badge">GRAPHIC</div>
+                        <div class="product-img"><img src="Mujeres/DSC09659_1100x.webp" alt="Spectre Bodysuit"></div>
+                        <div class="product-info">
+                            <span class="product-title">Spectre Cut-Out Bodysuit</span>
+                            <span class="product-price">$70.00</span>
+                            <button class="add-to-cart-btn" data-name="Spectre Bodysuit" data-price="70.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SHORTS -->
+                <div class="category-divider" data-women-cat="shorts">
+                    <h3 class="category-name">Shorts</h3>
+                    <span class="tech-text">Category_04 // Woman</span>
+                </div>
+                <div class="product-grid" data-women-cat="shorts">
+                    <div class="product-card">
+                        <div class="badge">LIMITED</div>
+                        <div class="product-img"><img src="Mujeres/DSC08451_1100x.webp" alt="Skull Bike Shorts"></div>
+                        <div class="product-info">
+                            <span class="product-title">Skull Placement Bike Shorts</span>
+                            <span class="product-price">$61.00</span>
+                            <button class="add-to-cart-btn" data-name="Skull Bike Shorts" data-price="61.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="badge">NEW</div>
+                        <div class="product-img"><img
+                                src="Mujeres/DSC07786_c1b7700e-9148-406f-9d73-2db33e064e1b_1100x.webp"
+                                alt="Tribal Shorts Red"></div>
+                        <div class="product-info">
+                            <span class="product-title">Tribal Shorts [Crimson Red]</span>
+                            <span class="product-price">$53.00</span>
+                            <button class="add-to-cart-btn" data-name="Tribal Shorts (Red)" data-price="53.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="badge">NEW</div>
+                        <div class="product-img"><img src="Mujeres/DSC08714-2_1100x.webp" alt="Tribal Shorts Blue">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-title">Tribal Shorts [Frozen Blue]</span>
+                            <span class="product-price">$53.00</span>
+                            <button class="add-to-cart-btn" data-name="Tribal Shorts (Blue)" data-price="53.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="badge">NEW</div>
+                        <div class="product-img"><img
+                                src="Mujeres/DSC09925_a57fc15f-8aa7-4ae1-84fc-4316e1797ce5_1100x.webp"
+                                alt="Tribal Shorts Grey"></div>
+                        <div class="product-info">
+                            <span class="product-title">Tribal Shorts [Shadow Grey]</span>
+                            <span class="product-price">$53.00</span>
+                            <button class="add-to-cart-btn" data-name="Tribal Shorts (Grey)" data-price="53.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LEGGINGS -->
+                <div class="category-divider" data-women-cat="leggings">
+                    <h3 class="category-name">Leggings</h3>
+                    <span class="tech-text">Category_05 // Woman</span>
+                </div>
+                <div class="product-grid" data-women-cat="leggings">
+                    <div class="product-card">
+                        <div class="product-img"><img src="Mujeres/DSC05486_1100x.webp" alt="Gothic Leggings Silver">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-title">Gothic Signature Leggings [Silver]</span>
+                            <span class="product-price">$82.00</span>
+                            <button class="add-to-cart-btn" data-name="Signature Leggings" data-price="82.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANTS -->
+                <div class="category-divider" data-women-cat="pants">
+                    <h3 class="category-name">Pants</h3>
+                    <span class="tech-text">Category_06 // Woman</span>
+                </div>
+                <div class="product-grid" data-women-cat="pants">
+                    <div class="product-card">
+                        <div class="badge">RESTOCKED</div>
+                        <div class="product-img"><img src="Mujeres/DSC05614_1100x.webp" alt="Spectre Wide Leg Blue">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-title">Spectre Wide Leg Pants [Frozen Blue]</span>
+                            <span class="product-price">$165.00</span>
+                            <button class="add-to-cart-btn" data-name="Spectre Pants (Blue)" data-price="165.00">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img
+                                src="Mujeres/DSC08253_c47f11fe-c69b-45e8-a118-7b4e41cefb48_1100x.webp"
+                                alt="Gargoyle Joggers Red"></div>
+                        <div class="product-info">
+                            <span class="product-title">Gargoyle Joggers [Bloodlust Red]</span>
+                            <span class="product-price">$158.00</span>
+                            <button class="add-to-cart-btn" data-name="Gargoyle Joggers (Red)" data-price="158.00">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img
+                                src="Mujeres/DSC08575_5c9bfff5-eae0-4125-b0c7-ce0fc6e33232_1100x.webp"
+                                alt="Gargoyle Joggers Violet"></div>
+                        <div class="product-info">
+                            <span class="product-title">Gargoyle Joggers [Witch Violet]</span>
+                            <span class="product-price">$158.00</span>
+                            <button class="add-to-cart-btn" data-name="Gargoyle Joggers (Violet)"
+                                data-price="158.00">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+            <p class="tech-text">© 2026 Black Void Haus — Womenswear Archive</p>
+        </footer>
+    </div>
+
+    <!-- ============================================================
+         PAGE 4 — ARCHIVE (All products)
+    ============================================================ -->
+    <div class="page" id="page-archive">
+        <div class="page-rubric">
+            <h2>Archive</h2>
+            <span class="page-rubric-sub tech-text">Full Drop // 2026</span>
+        </div>
+        <div class="rubric-breadcrumb">
+            <span onclick="showPage('home')" style="cursor:crosshair;">BVH</span>
+            <span>›</span>
+            <span class="active-crumb">Archive</span>
+        </div>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter-archive="all">All</button>
+            <button class="filter-btn" data-filter-archive="man">Man</button>
+            <button class="filter-btn" data-filter-archive="woman">Woman</button>
+        </div>
+
+        <!-- MEN SECTION -->
+        <div class="section-man" data-archive-gender="man">
+            <div class="section-inner">
+                <div
+                    style="font-family:'New Rocker',cursive; font-size:clamp(3rem,8vw,5rem); color:rgba(255,255,255,0.03); margin-bottom:-0.5rem; letter-spacing:0.8rem; text-align:center; text-transform:uppercase;">
+                    MENSWEAR</div>
+
+                <div class="category-divider">
+                    <h3 class="category-name">Hoodies</h3>
+                    <span class="tech-text">Man</span>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="badge">SOLD OUT</div>
+                        <div class="product-img"><img src="Hombres/02 Hoodies/hoodie-graphic-01.png" alt="">
+                        </div>
+                        <div class="product-info"><span class="product-title">Rasg Hoodie</span><span
+                                class="product-price">$148.00</span><button class="add-to-cart-btn"
+                                data-name="Rasg Hoodie" data-price="148.00">Add to Cart</button></div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img src="Hombres/02 Hoodies/DSC00139-3_720x.webp" alt=""></div>
+                        <div class="product-info"><span class="product-title">Tarnished Leviathan Zip-up</span><span
+                                class="product-price">$148.00</span><button class="add-to-cart-btn"
+                                data-name="Leviathan Zip-up" data-price="148.00">Add to Cart</button></div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img src="Hombres/02 Hoodies/DSC04175_1100x.webp" alt=""></div>
+                        <div class="product-info"><span class="product-title">Black-Angel</span><span
+                                class="product-price">$148.00</span><button class="add-to-cart-btn"
+                                data-name="Black-Angel" data-price="148.00">Add to Cart</button></div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img src="Hombres/02 Hoodies/DSC09439_1100x.jpg" alt=""></div>
+                        <div class="product-info"><span class="product-title">Tarnished Angel Zip-up</span><span
+                                class="product-price">$148.00</span><button class="add-to-cart-btn"
+                                data-name="Tarnished Angel" data-price="148.00">Add to Cart</button></div>
+                    </div>
+                </div>
+
+                <div class="category-divider">
+                    <h3 class="category-name">Shirts</h3>
+                    <span class="tech-text">Man</span>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="badge">HOT DROP</div>
+                        <div class="product-img"><img
+                                src="Hombres/01 Camisetas/oversized-tshirt-red-01.webp"
+                                alt=""></div>
+                        <div class="product-info"><span class="product-title">Forgotten Soul [Heavenly Red]</span><span
+                                class="product-price">$57.00</span><button class="add-to-cart-btn"
+                                data-name="Forgotten Soul (Red)" data-price="57.00">Add to Cart</button></div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img
+                                src="Hombres/01 Camisetas/oversized-tshirt-midnight-01.webp"
+                                alt=""></div>
+                        <div class="product-info"><span class="product-title">Forgotten Soul [Midnight
+                                Black]</span><span class="product-price">$57.00</span><button class="add-to-cart-btn"
+                                data-name="Forgotten Soul (Black)" data-price="57.00">Add to Cart</button></div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img src="Hombres/01 Camisetas/DSC01744_1100x.jpg" alt=""></div>
+                        <div class="product-info"><span class="product-title">Forgotten Soul Tee [Shadow
+                                White]</span><span class="product-price">$57.00</span><button class="add-to-cart-btn"
+                                data-name="Forgotten Soul (White)" data-price="57.00">Add to Cart</button></div>
+                    </div>
+                </div>
+
+                <div class="category-divider">
+                    <h3 class="category-name">Pants & Cargos</h3>
+                    <span class="tech-text">Man</span>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img"><img
+                                src="Hombres/03 Pants/DSC01041_70db1fc8-da21-4a5c-8e09-9e8df311871c_1100x.jpg" alt="">
+                        </div>
+                        <div class="product-info"><span class="product-title">Gargoyle Banana Cargos Grey</span><span
+                                class="product-price">$128.00</span><button class="add-to-cart-btn"
+                                data-name="Gargoyle Cargos Grey" data-price="128.00">Add to Cart</button></div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img src="Hombres/03 Pants/DSC01461_1100x.webp" alt=""></div>
+                        <div class="product-info"><span class="product-title">Abyss Wide Leg Pants</span><span
+                                class="product-price">$120.00</span><button class="add-to-cart-btn"
+                                data-name="Abyss Wide Leg" data-price="120.00">Add to Cart</button></div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img src="Hombres/03 Pants/DSC09918_1100x.webp" alt=""></div>
+                        <div class="product-info"><span class="product-title">Abyss Wide Leg Pants Violet</span><span
+                                class="product-price">$120.00</span><button class="add-to-cart-btn"
+                                data-name="Abyss Wide Leg Violet" data-price="120.00">Add to Cart</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WOMEN SECTION -->
+        <div class="section-woman" data-archive-gender="woman">
+            <div class="section-inner">
+                <div
+                    style="font-family:'New Rocker',cursive; font-size:clamp(3rem,8vw,5rem); color:rgba(255,255,255,0.03); margin-bottom:-0.5rem; letter-spacing:0.8rem; text-align:center; text-transform:uppercase;">
+                    WOMENSWEAR</div>
+
+                <div class="category-divider">
+                    <h3 class="category-name">Shirts & Tops</h3>
+                    <span class="tech-text">Woman</span>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="badge">TACTICAL</div>
+                        <div class="product-img"><img src="Mujeres/DSC05524_1100x.webp" alt=""></div>
+                        <div class="product-info"><span class="product-title">Archangel Technical Zip Tee</span><span
+                                class="product-price">$70.00</span><button class="add-to-cart-btn"
+                                data-name="Archangel Zip Tee" data-price="70.00">Add to Cart</button></div>
+                    </div>
+                    <div class="product-card">
+                        <div class="badge">HOT DROP</div>
+                        <div class="product-img"><img src="Mujeres/DSC05664-2_1100x.webp" alt=""></div>
+                        <div class="product-info"><span class="product-title">Tribal Tank [Spectral Blue]</span><span
+                                class="product-price">$57.00</span><button class="add-to-cart-btn"
+                                data-name="Tribal Tank (Blue)" data-price="57.00">Add to Cart</button></div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img
+                                src="Mujeres/DSC09046_3c02c941-2067-4b21-b0f3-c06690224026_1100x.webp" alt=""></div>
+                        <div class="product-info"><span class="product-title">Archangel Wings Tee [Bone
+                                White]</span><span class="product-price">$57.00</span><button class="add-to-cart-btn"
+                                data-name="Archangel Wings Tee" data-price="57.00">Add to Cart</button></div>
+                    </div>
+                </div>
+
+                <div class="category-divider">
+                    <h3 class="category-name">Bodysuits & Bras</h3>
+                    <span class="tech-text">Woman</span>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="badge">GRAPHIC</div>
+                        <div class="product-img"><img src="Mujeres/DSC09659_1100x.webp" alt=""></div>
+                        <div class="product-info"><span class="product-title">Spectre Cut-Out Bodysuit</span><span
+                                class="product-price">$70.00</span><button class="add-to-cart-btn"
+                                data-name="Spectre Bodysuit" data-price="70.00">Add to Cart</button></div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img src="Mujeres/DSC08271_1100x.webp" alt=""></div>
+                        <div class="product-info"><span class="product-title">Gothic Core Sports Bra</span><span
+                                class="product-price">$48.00</span><button class="add-to-cart-btn"
+                                data-name="Gothic Sports Bra" data-price="48.00">Add to Cart</button></div>
+                    </div>
+                </div>
+
+                <div class="category-divider">
+                    <h3 class="category-name">Bottoms</h3>
+                    <span class="tech-text">Woman</span>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="badge">LIMITED</div>
+                        <div class="product-img"><img src="Mujeres/DSC08451_1100x.webp" alt=""></div>
+                        <div class="product-info"><span class="product-title">Skull Placement Bike Shorts</span><span
+                                class="product-price">$61.00</span><button class="add-to-cart-btn"
+                                data-name="Skull Bike Shorts" data-price="61.00">Add to Cart</button></div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><img src="Mujeres/DSC05486_1100x.webp" alt=""></div>
+                        <div class="product-info"><span class="product-title">Gothic Signature Leggings</span><span
+                                class="product-price">$82.00</span><button class="add-to-cart-btn"
+                                data-name="Signature Leggings" data-price="82.00">Add to Cart</button></div>
+                    </div>
+                    <div class="product-card">
+                        <div class="badge">RESTOCKED</div>
+                        <div class="product-img"><img src="Mujeres/DSC05614_1100x.webp" alt=""></div>
+                        <div class="product-info"><span class="product-title">Spectre Wide Leg Pants [Blue]</span><span
+                                class="product-price">$165.00</span><button class="add-to-cart-btn"
+                                data-name="Spectre Pants" data-price="165.00">Add to Cart</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p class="tech-text">© 2026 Black Void Haus — Full Archive</p>
+        </footer>
+    </div>
+
+    <!-- ============================================================
+         PAGE 5a — ABOUT
+    ============================================================ -->
+    <div class="page" id="page-about">
+        <div class="page-rubric">
+            <h2>About</h2>
+            <span class="page-rubric-sub tech-text">The Void // Manifesto</span>
+        </div>
+        <div class="rubric-breadcrumb">
+            <span onclick="showPage('home')" style="cursor:crosshair;">BVH</span>
+            <span>›</span>
+            <span class="active-crumb">About</span>
+        </div>
+
+        <div class="about-content">
+            <h3>Origin</h3>
+            <p>Black Void Haus was born from the intersection of gothic ritual and high-mobility streetwear. Founded in
+                2023, the brand fuses archival darkness with modern technical construction — garments built for
+                movement, designed for the abyss.</p>
+
+            <div class="about-stat-row">
+                <div class="about-stat">
+                    <span class="about-stat-num">2023</span>
+                    <span class="about-stat-label">Founded</span>
+                </div>
+                <div class="about-stat">
+                    <span class="about-stat-num">48+</span>
+                    <span class="about-stat-label">Archive Pieces</span>
+                </div>
+                <div class="about-stat">
+                    <span class="about-stat-num">Global</span>
+                    <span class="about-stat-label">Shipping</span>
+                </div>
+            </div>
+
+            <h3>Philosophy</h3>
+            <p>Each collection is a document — an archive of darkness translated into wearable form. We design for those
+                who exist at the edge of expression. Limited drops. No restocks. Once it's gone, it returns to the void.
+            </p>
+
+            <h3>Materials & Construction</h3>
+            <p>All garments are constructed from premium heavyweight cotton, technical stretch fabrics, and custom-dyed
+                materials. Every piece undergoes our signature wash process for that aged, lived-in feel from day one.
+                We don't do fast fashion — we do archive fashion.</p>
+
+            <h3>Drops</h3>
+            <p>Black Void Haus operates on a seasonal drop model. Archive V1 launched Spring 2024. Archive V2 — the
+                current collection — is live now. Subscribe to our transmissions for early access to upcoming drops.</p>
+        </div>
+
+        <footer>
+            <p class="tech-text">© 2026 Black Void Haus — Designed for high-mobility gothic streetwear</p>
+        </footer>
+    </div>
+
+    <!-- ============================================================
+         PAGE 5b — SUPPORT
+    ============================================================ -->
+    <div class="page" id="page-support">
+        <div class="page-rubric">
+            <h2>Support</h2>
+            <span class="page-rubric-sub tech-text">Transmissions & Inquiries</span>
+        </div>
+        <div class="rubric-breadcrumb">
+            <span onclick="showPage('home')" style="cursor:crosshair;">BVH</span>
+            <span>›</span>
+            <span class="active-crumb">Support</span>
+        </div>
+
+        <div class="support-wrap">
+            <p>For order inquiries, sizing questions, wholesale, and press contact — transmit below or reach us
+                directly.</p>
+            <a href="mailto:blackvoidhaus@gmail.com" class="support-email-link">blackvoidhaus@gmail.com</a>
+
+            <form class="support-form"
+                onsubmit="event.preventDefault(); showNotification('INQUIRY TRANSMITTED TO THE VOID'); this.reset();">
+                <div class="form-group">
+                    <label for="support-name">Name</label>
+                    <input type="text" id="support-name" class="form-input" placeholder="YOUR NAME" required>
+                </div>
+                <div class="form-group">
+                    <label for="support-email-input">Email</label>
+                    <input type="email" id="support-email-input" class="form-input" placeholder="RECIPIENT@DOMAIN.COM"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="support-subject">Subject</label>
+                    <select id="support-subject" class="form-input lang-selector" style="width:100%; padding:0.8rem;">
+                        <option>Order Inquiry</option>
+                        <option>Sizing & Fit</option>
+                        <option>Returns & Exchanges</option>
+                        <option>Wholesale</option>
+                        <option>Press & Media</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="support-message-input">Message</label>
+                    <textarea id="support-message-input" class="form-input" rows="5"
+                        placeholder="SPECIFY YOUR INQUIRY..." style="resize: none;" required></textarea>
+                </div>
+                <button type="submit" class="form-submit-btn">Transmit Message</button>
+            </form>
+        </div>
+
+        <footer>
+            <p class="tech-text">© 2026 Black Void Haus — Support & Transmissions</p>
+        </footer>
+    </div>
+
+    <!-- CART DRAWER -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3 class="tech-text">SYSTEM_CART</h3>
+            <button class="close-cart" id="closeCart">×</button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer"></div>
+        <div class="cart-total-section">
+            <div style="display:flex; justify-content:space-between; margin-bottom:1.5rem;" class="tech-text">
+                <span>TOTAL</span>
+                <span id="cartTotalValue">$0.00</span>
+            </div>
+            <button class="add-to-cart-btn" style="background:var(--bone); color:var(--void);"
+                onclick="processCheckout()">PROCESS ORDER</button>
+        </div>
+    </div>
+
+    <div class="toast" id="toastNotification">ITEM ADDED TO ARCHIVE</div>
+    <script src="script.js"></script>
+</body>
+
+</html>
