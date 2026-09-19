@@ -6,7 +6,7 @@ Proyecto personal de práctica: una tienda online ficticia de ropa "gothic stree
 
 ## Demo
 
-👉 [Ver demo en vivo](#) *(añade aquí el enlace de GitHub Pages una vez lo despliegues)*
+👉 [Ver demo en vivo](https://jannvar.github.io/black-void-haus/)
 
 ## Capturas
 
